@@ -1,35 +1,28 @@
-const http = require("http") //constante para criar o metodo http
+const express = require("express") //constante para chamar o servidor via express
 
-let server = http.createServer((req, res)=>{
+let app = express()  //chama o servidor http 
 
-    console.log("URL:", req.url)
-    console.log("METHOD:", req.method)
+app.get("/", (req, res) => {
 
-    switch (req.url) {
 
-        case "/": 
+    res.statusCode = 200
+    res.setHeader("Content-Type", "text/html")
+    res.end("<h1>Olá</h1>")//retorno da url / (volta ola com formatacao)
 
-        res.statusCode = 200
-        res.setHeader("Content-Type", "text/html")
-        res.end("<h1>Olá</h1>")
-        break //switch para retorno da url / (volta ola com formatacao)
+})
 
-        case "/users":
+app.get("/users", (req, res) => {
+    res.statusCode = 200
+    res.setHeader("Content-Type", "application/json")
+    res.json({
+        users: [{
+            name: "teste",
+            email: "teste@teste.com"
+            //id: 1
+        }] //switch para retorno da /users que retorna um json de usuarios
+    })
+ })   
 
-        res.statusCode = 200
-        res.setHeader("Content-Type", "application/json")
-        res.end(JSON.stringify({
-            users: [{
-                name:"teste",
-                email:"teste@teste.com"
-                //id: 1
-            }] //switch para retorno da /users que retorna um json de usuarios
-        }))
-        break
-    }
-
-}) //chama o servidor http e retorna qual a url e o metodo utilizado
-
-server.listen(3000, "127.0.0.1", ()=>{
+app.listen(3000, "127.0.0.1", () => {
     console.log("servidor rodando")
 }) //ouve o servidor e retorna se funcionou
