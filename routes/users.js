@@ -49,4 +49,16 @@ module.exports = app => {
         }) //rota criada para puxar o usuario a partir do id dele
     })
 
+    routeId.put((req, res) => {
+        
+        db.update({ _id: req.params.id }, req.body, err => {
+
+            if (err) {
+                app.utils.error.send(err, req, res)
+            } else {
+                res.status(200).json(Object.assign(req.body, req.body))
+            }
+        }) //rota criada para atualizar informacoes de um usuario
+    })
+    
 }
