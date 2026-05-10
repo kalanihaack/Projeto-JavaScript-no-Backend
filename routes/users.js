@@ -4,6 +4,7 @@ let db = new NeDB({
     autoload: true
 })
 
+
 module.exports = app => {
 
     let route = app.route("/users")
@@ -24,6 +25,8 @@ module.exports = app => {
     })
 
     route.post((req, res) => {
+
+        if (!app.utils.validator.user(app, req, res)) return false //se passar por todas as validacoes, segue o codigo
 
         db.insert(req.body, (err, user) => { //enviando informacoes para o banco de dado via API que retorna o id unico dele
 
@@ -50,6 +53,8 @@ module.exports = app => {
     })
 
     routeId.put((req, res) => {
+
+        if (!app.utils.validator.user(app, req, res)) return false //se passar por todas as validacoes, segue o codigo 
 
         db.update({ _id: req.params.id }, req.body, err => {
 
