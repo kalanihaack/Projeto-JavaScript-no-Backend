@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kalanihaack/Projeto-JavaScript-no-Backend#readme",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^5.2.1"
   }
 }
