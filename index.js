@@ -5,7 +5,28 @@ let server = http.createServer((req, res)=>{
     console.log("URL:", req.url)
     console.log("METHOD:", req.method)
 
-    res.end("OK") 
+    switch (req.url) {
+
+        case "/": 
+
+        res.statusCode = 200
+        res.setHeader("Content-Type", "text/html")
+        res.end("<h1>Olá</h1>")
+        break //switch para retorno da url / (volta ola com formatacao)
+
+        case "/users":
+
+        res.statusCode = 200
+        res.setHeader("Content-Type", "application/json")
+        res.end(JSON.stringify({
+            users: [{
+                name:"teste",
+                email:"teste@teste.com"
+                //id: 1
+            }] //switch para retorno da /users que retorna um json de usuarios
+        }))
+        break
+    }
 
 }) //chama o servidor http e retorna qual a url e o metodo utilizado
 
