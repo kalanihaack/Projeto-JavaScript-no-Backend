@@ -1,7 +1,7 @@
 const express = require("express") //constante para chamar o servidor via express
 const consign = require("consign") //atraves do consign, criamos usando app com maior facilidade
-const bodyParser = require("body-parser")//biblioteca para retornar o que vira na requisicao
- 
+const bodyParser = require("body-parser") //biblioteca para retornar o que vira na requisicao
+
 let app = express()  //chama o servidor http
 
 app.use(bodyParser.urlencoded({extended : false}))
