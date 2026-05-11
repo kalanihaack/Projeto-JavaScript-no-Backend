@@ -1,4 +1,3 @@
-```markdown
 # Projeto JavaScript no Backend
 
 ## 📖 Sobre o Projeto
@@ -26,7 +25,6 @@ Este projeto consiste numa API RESTful desenvolvida em ambiente de servidor (Bac
  ┣ 📜 package.json      # Dependências e informações do projeto
  ┗ 📜 README.md         # Documentação do projeto
 
-```
 
 ## 🚀 Como Instalar e Executar
 
