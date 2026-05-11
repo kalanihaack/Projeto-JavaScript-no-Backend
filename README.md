@@ -84,8 +84,5 @@ Abaixo estão as rotas disponíveis nesta API:
 * **`DELETE /users/:id`**
 * Remove um utilizador do sistema de forma permanente através do ID.
 
-
-
 ```
 
-```
