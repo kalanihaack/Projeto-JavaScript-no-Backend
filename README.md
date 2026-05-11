@@ -24,7 +24,7 @@ Este projeto consiste numa API RESTful desenvolvida em ambiente de servidor (Bac
  ┣ 📜 index.js          # Ficheiro de entrada da aplicação e configurações do servidor
  ┣ 📜 package.json      # Dependências e informações do projeto
  ┗ 📜 README.md         # Documentação do projeto
-
+```
 
 ## 🚀 Como Instalar e Executar
 
